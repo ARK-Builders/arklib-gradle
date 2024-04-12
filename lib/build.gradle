@@ -20,7 +20,7 @@ sonarqube {
     }
 }
 android {
-    compileSdkVersion 34
+    compileSdk 34
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -92,7 +92,7 @@ tasks.whenTaskAdded { task ->
 }
 
 //For local development:
-//def libVersion = '999'
+// def libVersion = '999'
 def libVersion = scmVersion.version
 
 publishing {
