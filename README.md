@@ -47,13 +47,27 @@ implementation 'dev.arkbuilders:arklib:0.3.1'
 
 ### Build Rust library
 
-You need to have Rust targets installed:
+#### Install Rust Android targets
 ```sh
 rustup target add armv7-linux-androideabi
 rustup target add aarch64-linux-android
 rustup target add i686-linux-android
 rustup target add x86_64-linux-android
 ```
+#### Setup the environment
+ * ###### Linux
+```sh
+export ANDROID_HOME=$YOUR_ANDROID_SDK_PATH
+export NDK_HOME=$ANDROID_HOME/ndk/{ndk-version}
+export ANDROID_NDK_TOOLCHAIN_DIR=$NDK_HOME/toolchains/llvm/prebuilt/linux-x84_64
+export AR=$ANDROID_NDK_TOOLCHAIN_DIR/bin/llvm-ar
+export LD=$ANDROID_NDK_TOOLCHAIN_DIR/bin/ld
+export RANLIB=$ANDROID_NDK_TOOLCHAIN_DIR/bin/llvm-ranlib
+export STRIP=$ANDROID_NDK_TOOLCHAIN_DIR/bin/llvm-strip
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_NDK_TOOLCHAIN_DIR/bin
+```
+Replace `{ndk-version}` with the value of `android.ndkVersion` in `build.gradle (:lib)`
 
 #### Compile Rust (option 1)
 
