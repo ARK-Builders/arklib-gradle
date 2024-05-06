@@ -90,8 +90,8 @@ tasks.whenTaskAdded { task ->
     }
 }
 
-//For local development:
-//def libVersion = '999'
+/* For local development:
+//def libVersion = '999'*/
 def libVersion = scmVersion.version
 
 publishing {
