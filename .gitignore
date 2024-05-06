@@ -23,3 +23,4 @@ libarklib.dll
 !arklib/.cargo
 arklib/.cargo/*
 !arklib/.cargo/config
+arklib/Cargo.lock
